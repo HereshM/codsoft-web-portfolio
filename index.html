@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animated portfolio website</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+
+   <!--boxicons links---> 
+   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+   <!--google fonts link-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel=" stylesheet" href="https://fonts.googleapis.com/css2?
+   family-Rubik:wght@300;400;500; 600; 700; 800; 900&display=swap" >
+
+</head>
+<body>
+   <!--header section--->
+   <header>
+      <a href="#" class="logo"><span>T</span>erminator</a>
+      <ul class="navbar">
+          <li><a href="#" class="active"> Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacts</a></li>
+      </ul>
+      <div class="menu-btn">
+         <span>INTRO</span>
+         <div class=" bx bx-menu" id="menu-icon">
+         </div>
+      </div>
+   </header>
+   <!--home section--->
+   <section class="home">
+    <div class="home-text">
+        <span>Software Developer</span>
+            <h1>Heresh.M</h1>
+            <p>I'm a Designer, Front end Developer ,templates,wireframe kits.</p>
+            <div>
+                <a href="#" class="btn"> Download CV</a>
+                <a href="#" class="btn two"> Hire me Now</a>
+            </div>
+      </div>
+    <div class="home-img">
+         <img src="WhatsApp Image 2024-06-18 at 3.48.14 PM.jpeg"/>
+    </div>
+    </section>
+   <div class="share">
+    <p>Check out my:</p>
+    <div class="social">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <a href="#"><i class='bx bxl-skype'></i></a>
+        </div>
+   </div>
+    <div class="container about" id="about"  >
+        <div class="main-title">
+            <center><h2 class="logo"><br><span>A</span>bout <span>M</span>e</h2></center>
+        </div>
+        <div class="about-container">
+            <div class="left-about">
+                <center><h4>Information About me</h4></center>
+                <p>
+                   Hello,I'm Heresh, a dedicated student with a strong passion for web development. Currently pursuing B.tech ECE at Manakula vinayagar institude of technology, I have been immersing myself in the world of coding  and design, eager to turn my enthusiasum into tangible skills. Proficient in languages like HTML,CSS and Javascript, I have under taken various  projects to deepen my understanding . From crafting responsive websites to experimenting with dynamic web applications, I am committed to honing my craft and staying updated with the latest industry trends. Beyond coursework, I actively engage in coding clubs and  seeking opportunities to collaborate, learn and innovate a new web.My goal is to leverage my skills and creativity to contribute meaningfully to the ever-evolving field of web development. 
+                </p>
+                <div class="right-about">
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text"><strong>10+</strong></p>
+                            <p class="small-text">Projects<br />Completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerskill" id="skills">
+                <center><br><br><br><h1 class="logo"><span>S</span>kills</h1></center>
+                <hr class="styled-line"/><br>
+                <div class="SKILL">
+                <ol >
+                    <li class="lang">C</li>
+                    <li class="lang">C++</li>
+                    <li class="lang">HTML</li>
+                    <li class="lang">CSS</li>
+                </ol>
+                </div>
+                </div>
+                <div class="containerskill"  id="portfolio">
+                   <center> <h1 class="logo"><br><br><span>M</span>y <span>P</span>rojects</h1></center>
+                    <hr class="styled-line"><br>
+                    <div class="project">
+                        <center><h2>This is my some projects based on the web design and UI and UX</h2></center>
+                         <img src="Screenshot 2024-06-23 173353.png" alt="calculator" class="Image">
+                         <img src="Screenshot 2024-06-23 173601.png" alt="Landing page" class="Image">
+                         <img src="Untitled-1.png" alt="resturant menu" class="Image">
+                         <!-- <img src="IMG-20240623-WA0001.jpg" alt="signup page" class="Image"> -->
+                         <div class="text">
+                         <h3 class="cal">Calculator</h3>
+                         <h3 class="lan">Landing page</h3>
+                         <h3 class="res">resturant Menu</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+   </div>
+   <!--Custom js file link--->
+   <script>
+      let menu = document.querySelector('#menu-icon');
+      let navbar = document.querySelector('.navbar');
+      
+      menu.onclick = () =>{
+          menu.classList.toggle('bx-x');
+          navbar.classList.toggle('open')
+      };
+      
+      const sr = scrollReveal ({
+          distance: '40px',
+          duration:2500,
+          reset: true
+      });
+      
+      sr.reveal('.logo',{delay:200,origin:'left'});
+      sr.reveal('.navbar',{delay:400,origin:'top'});
+      sr.reveal('.menu-btn',{delay:520,origin:'right'});
+      
+      sr.reveal('.home-text span',{delay:600,origin:'top'});
+      sr.reveal('.home-text h1',{delay:680,origin:'left'});
+      sr.reveal('.home-text p',{delay:750,origin:'right'});
+
+     document.querySelectorAll('.nav a[href^= "#"]').forEach(anchor =>
+             {
+                 anchor. addEventListener('click',function(e){
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement =document.getElementById(targetId);
+                    if(targetElement){
+                        targetElement.scrollIntoView({
+                            behavior:'smooth'
+                        });
+                    }
+                 });
+                });
+
+                
+
+
+
+
+
+      </script>
+
+   
+</body>
+</html>
